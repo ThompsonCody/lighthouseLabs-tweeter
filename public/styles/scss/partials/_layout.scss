@@ -1,0 +1,43 @@
+/* --- LAYOUT --- */
+
+html{
+  box-sizing: border-box;
+  font-family: $font-family;
+  min-height: 100vh;
+  body{
+    margin: 0;
+    color: #244751;
+    background-color: $grey;
+    height: auto;
+    &, main.container{
+      @include flex-direction(column);
+      min-height:inherit;
+    }
+  }
+}
+
+main.container{
+  max-width:450px;
+  background: $off-white;
+  margin: 0 auto; padding: 100px 2em 0;
+}
+
+#nav-bar, main.container, section.all-tweets header{
+  width: 100%;
+  display: inherit;
+ }
+
+#nav-bar, section.all-tweets header{
+  @include align-items(center);
+}
+
+nav #toggle-compose, section.all-tweets .tweet header span{
+  border-radius: 5px;
+}
+
+.tweet-template{
+  flex-direction: column;
+  width:100%;
+  border-radius: 6px;
+  border: .5px solid black;
+}

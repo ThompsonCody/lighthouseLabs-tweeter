@@ -1,0 +1,75 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+/*
+  imported styles - keep at top
+*/
+
+@import url("nav.css");
+@import url("tweets.css");
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+*{
+  transition: all .25s ease-in-out;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+button, input[type=submit]{cursor: pointer;}
+
+/*
+ * Global layout stuff
+ */
+
+.flex{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  height: auto;
+  flex-direction:column;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ body, main.container{
+  min-height:inherit;
+ }
+
+ main.container{
+  max-width:450px;
+  background: #f4f4f4;
+  margin: 0 auto; padding: 100px 2em 0;
+  flex-direction: column;
+ }
+
+ #nav-bar, main.container, section.all-tweets header{
+  width:100%;
+  display:inherit;
+ }
+
+#nav-bar, section.all-tweets header{
+  align-items:center;
+}
+
+nav #toggle-compose, section.all-tweets .tweet header span{
+  border-radius: 5px;
+}

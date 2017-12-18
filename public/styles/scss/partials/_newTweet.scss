@@ -1,0 +1,30 @@
+/* --- TWEET COMPOSE --- */
+
+section.new-tweet{
+  margin-bottom:1.5em;
+  padding-bottom: 1.5em;
+  width:100%;
+  border-bottom: 1px solid;
+  display:none; /* this is causing the slideDown to jump */
+  h2{
+    margin-top:0;
+    border-bottom: 1px solid black;
+  }
+  .tweet-template{
+    background: #4B8178; color:#fff;
+    padding: 1em;
+  }
+  form [type=submit]{
+    width:40%;
+    background: #fff;
+    border: .2px solid black;
+    height: 25px;
+    border-radius: 3px;
+  }
+  textarea{
+    max-width:100%;
+    min-width:100%;
+    min-height:60px;
+  }
+  .counter {float:right;}
+}

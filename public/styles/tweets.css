@@ -1,0 +1,95 @@
+
+.tweet-template{
+  flex-direction: column;
+  width:100%;
+  border-radius: 6px;
+  border: .5px solid black;
+}
+
+
+/*---------------TWEET COMPOSE SECTION----------------*/
+
+section.new-tweet{
+  margin-bottom:1.5em;
+  padding-bottom: 1.5em;
+  width:100%;
+  border-bottom: 1px solid;
+}
+
+section.new-tweet{
+  display:none;
+ /* this is causing the slideDown to jump*/
+}
+
+section.new-tweet .tweet-template{
+  background: #4B8178; color:#fff;
+  padding: 1em;
+}
+
+section.new-tweet h2{
+  margin-top:0;
+  border-bottom: 1px solid black;
+}
+
+section.new-tweet form [type=submit]{
+  width:40%;
+  background: #fff;
+  border: .2px solid black;
+  height: 25px;
+  border-radius: 3px;
+}
+section.new-tweet textarea{
+  max-width:100%;
+  min-width:100%;
+  min-height:60px;
+ }
+section.new-tweet .counter {float:right;}
+
+
+/*----------------TWEET/SINGLE TWEET SECTION-------------*/
+
+section.all-tweets header, .all-tweets footer{
+  padding:0 1em;
+}
+
+
+section.all-tweets .tweet{
+  background: #fff; color:black;
+  margin: 1em 0;
+  opacity: .5;
+} section.all-tweets .tweet:first-child{margin-top:0;}
+
+section.all-tweets header{
+  background: #77CEBF; color:white;
+}
+section.all-tweets .tweet header span{
+  border: 1px solid;
+  line-height: 0;
+  margin-right: 1em;
+}
+
+section.all-tweets .tweet-content{
+  padding: 0 15px;
+}
+
+section.all-tweets footer{
+  line-height: 2;
+  border-top: .5px solid black;
+}
+section.all-tweets .tweet, section.all-tweets footer{
+  transition: border .25s ease-in-out;
+} section.all-tweets .tweet:hover, section.all-tweets .tweet:hover footer{
+    border-width: 2px; opacity: 1;
+}
+
+span#tweet-icons {
+    float: right;
+}
+.tweet-icon{
+  border:none;
+  background:none;
+}
+
+section.all-tweets footer, section.all-tweets .tweet header span{
+  overflow: hidden;
+}

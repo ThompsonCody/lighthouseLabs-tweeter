@@ -1,0 +1,38 @@
+#nav-bar{
+  align-items: center;
+  position: fixed;
+  z-index: 100000;
+  max-height: 80px;
+  height:100%;
+  color: #e8fdff;
+  background: #247ba0;
+  padding:0 5vmax;
+   -webkit-box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    1px 1px 8px 3px rgba(0, 0, 0, 0.5);
+  box-shadow:         1px 1px 8px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav > * {margin: 0 5px;}
+
+#nav-bar .logo{
+  width:80px; height:80px;
+} #logo-path{fill: #f0f0f0; stroke: #fff;}
+#nav-bar h1{
+  font-weight: 400;
+}
+
+
+/*toggles the compose tweet form*/
+nav #toggle-compose{
+    margin-left: auto;
+    background: #eee;
+    border-style: dotted;
+    width: 110px; height: 50px;
+    font-weight: 300;
+    font-size:18px;
+}
+#toggle-compose:hover{
+  color: #247ba0; background:#f4f4f4;
+  font-weight: 400;
+  border: 2px solid black;
+}

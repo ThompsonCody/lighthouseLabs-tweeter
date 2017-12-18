@@ -1,0 +1,18 @@
+@import "partials/base";
+@import "partials/flex";
+
+*{
+  transition: all .25s ease-in-out;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+@import "partials/layout";
+@import "partials/nav";
+@import "partials/newTweet";
+@import "partials/tweets";
+
+//------
+
+
