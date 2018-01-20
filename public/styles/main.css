@@ -124,6 +124,7 @@ section.all-tweets header, section.all-tweets footer {
   padding: 0 1em; }
 
 section.all-tweets .tweet {
+  overflow: hidden;
   background: white;
   color: black;
   margin: 1em 0;

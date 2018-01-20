@@ -5,6 +5,7 @@ section.all-tweets{
     padding:0 1em;
   }
   .tweet{
+    overflow: hidden; //fixes background cropping issue
     background: white; color:black;
     margin: 1em 0;
     opacity: .5;

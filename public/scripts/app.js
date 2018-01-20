@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(() => {
 
 //------------------------------------//
@@ -38,7 +32,7 @@ $(() => {
           <footer>
             ${tweetCreateDate}
             <span id="tweet-icons">
-              <p class="like-count">${tweetLikes}</p>
+              <!-- <p class="like-count">${tweetLikes}</p> -->
               <i class="fa fa-heart" id="fav-heart" style="cursor:pointer;" aria-hidden="true" data-id="${tweetId}"></i>
               <i class="fa fa-flag" aria-hidden="true"></i>
               <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -58,15 +52,27 @@ $(() => {
   loadTweets();
 
   //TOGGLE TWEET COMPOSE
-  $('#toggle-compose').on("click", function(event) {
-    event.preventDefault();
+
+  // $.fn.extend({
+  //   toggle: function(){
+  //     $(".new-tweet").slideToggle();
+  //     $(".compose-text").focus();
+  //   },
+  // })
+
+
+  function composerToggle(){
     $(".new-tweet").slideToggle();
     $(".compose-text").focus();
-  });
+  }
+
+
+  $('#toggle-compose').on("click", composerToggle);
 
 
   //Post from tweet compose
-  $('#tweet-compose').on("submit", function(event) {
+
+  function tweetHandler(event){
     event.preventDefault();
     let tweetCompose = $('#tweet-textarea').val().length;
     if(tweetCompose !== 0 && tweetCompose < 140){
@@ -78,13 +84,19 @@ $(() => {
         loadTweets();
 
         $(".new-tweet").slideUp();//toggles back up after submit
+      }).done(function() {
+        // $(this).find('textarea').val('');
+        $('.new-tweet').find('.counter').text('140');
       });
-    } else {
-
+    } else if(tweetCompose == 0){
+      alert("Tweet must contain an actual tweet");
+      return;
       //more validation goes here
         //--form should not clear textarea, despite error
     }
-  });
+  }
+
+  $('#tweet-compose').on("submit", tweetHandler);
 
   //post from
     //if no cookie from previous session like, increment
