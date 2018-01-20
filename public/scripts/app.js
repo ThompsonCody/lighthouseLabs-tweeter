@@ -19,7 +19,9 @@ $(() => {
         tweetUserName     = tweet.user.name,
         tweetAvatar       = tweet.user.avatars.small,
         tweetHandler      = tweet.user.handle,
-        tweetCreateDate   = moment(tweet.created_at).fromNow();
+        tweetCreateDate   = moment(tweet.created_at).fromNow(),
+        tweetId                = tweet._id,
+        tweetLikes             = tweet.likes;
 
     const $tweet =
       `
@@ -36,9 +38,10 @@ $(() => {
           <footer>
             ${tweetCreateDate}
             <span id="tweet-icons">
+              <p class="like-count">${tweetLikes}</p>
+              <i class="fa fa-heart" id="fav-heart" style="cursor:pointer;" aria-hidden="true" data-id="${tweetId}"></i>
               <i class="fa fa-flag" aria-hidden="true"></i>
               <i class="fa fa-retweet" aria-hidden="true"></i>
-              <i class="fa fa-heart" id="fav-heart" style="cursor:pointer;" aria-hidden="true" data-event="like-id"></i>
             </span>
           </footer>
         </article>
@@ -55,11 +58,12 @@ $(() => {
   loadTweets();
 
   //TOGGLE TWEET COMPOSE
-  $('#toggle-compose').on("click", (event) => {
-    $(".new-tweet").slideDown();
+  $('#toggle-compose').on("click", function(event) {
+    event.preventDefault();
+    $(".new-tweet").slideToggle();
     $(".compose-text").focus();
-    console.log("HELLO");
   });
+
 
   //Post from tweet compose
   $('#tweet-compose').on("submit", function(event) {
