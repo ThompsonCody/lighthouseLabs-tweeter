@@ -53,13 +53,6 @@ $(() => {
 
   //TOGGLE TWEET COMPOSE
 
-  // $.fn.extend({
-  //   toggle: function(){
-  //     $(".new-tweet").slideToggle();
-  //     $(".compose-text").focus();
-  //   },
-  // })
-
 
   function composerToggle(){
     $(".new-tweet").slideToggle();
@@ -85,37 +78,22 @@ $(() => {
 
         $(".new-tweet").slideUp();//toggles back up after submit
       }).done(function() {
-        // $(this).find('textarea').val('');
         $('.new-tweet').find('.counter').text('140');
       });
     } else if(tweetCompose == 0){
       alert("Tweet must contain an actual tweet");
       return;
-      //more validation goes here
-        //--form should not clear textarea, despite error
     }
   }
 
   $('#tweet-compose').on("submit", tweetHandler);
 
-  //post from
-    //if no cookie from previous session like, increment
-      //post to ? using $.ajax
-    //else decrement
-      //delete to ? db
-
-  //Post from tweet favorite heart Icon
+  //Post from tweet favorite heart Icon - not working yet
   $('#fav-heart').on('click', function(event) {
-    // event.preventDefault();
-    console.log("Hello???!");
     $.ajax({
       method: "POST",
-      // url: "some.php",
-      // data: { name: "John", location: "Boston" }
     })
-    .done( (msg) => {
-      // alert( "Data Saved: " + msg );
-    });
+    .done( (msg) => {});
 
   });
 
